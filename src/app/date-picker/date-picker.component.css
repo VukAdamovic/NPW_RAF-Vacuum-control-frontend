@@ -1,0 +1,57 @@
+
+   /* ----- */
+   .custom-button{
+    width: 100%;
+    border-radius: 15px;
+    background: #455A64;
+    text-transform: uppercase;
+    color: #FFF;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px; 
+    font-weight: 700;
+    border: 1px solid transparent; 
+  }
+  
+  .custom-button:hover {
+    background-color: #384952;
+  }
+  
+  .custom-label {
+    color: #d9d9d9;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .custom-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+  }
+    
+  .custom-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+
+  .custom-input[type="date"] {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none; 
+    outline: none; 
+    color: #d9d9d9;
+  }
+
+  .custom-input[type="text"] {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none; 
+    outline: none; 
+    color: #d9d9d9;
+  }
+
+  

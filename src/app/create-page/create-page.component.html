@@ -1,0 +1,140 @@
+<div class="container h-100" *ngIf="isAllowed; else noPermissionMessage">
+    <div class="row gx-5 h-100 ">
+        
+        <div class="col-md" style="background-image: url('../../assets/images/Create-pana.svg'); background-size: contain; background-position: center center; background-repeat: no-repeat;">
+        </div>
+
+        <div class="col-md d-flex flex-column justify-content-center ">
+
+            <p class="custom-title text-center m-0">Create User</p>
+
+            <!-- FirstName -->
+            <p class="custom-lable text-start mx-0 mt-3 mb-0">First Name</p>
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col-auto py-1 px-0">
+                    <img src="../../assets/images/user-id-svgrepo-com.svg" style="pointer-events: none; user-select: none; height: 32px; width: 32px;">
+                </div>
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="text" placeholder="Type your first name" class="custom-input" [(ngModel)]="firstName">
+                </div>
+            </div>
+
+            <!-- LastName -->
+            <p class="custom-lable text-start mt-2 mb-0 mx-0">Last Name</p>
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col-auto py-1 px-0">
+                    <img src="../../assets/images/user-id-svgrepo-com.svg" style="pointer-events: none; user-select: none; height: 32px; width: 32px;">
+                </div>
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="text" placeholder="Type your last name" class="custom-input" [(ngModel)]="lastName">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <p class="custom-lable text-start mx-0 mt-3 mb-0">Email</p>
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col-auto py-1 px-0">
+                    <img src="../../assets/images/email.svg" style="pointer-events: none; user-select: none; height: 32px; width: 32px;">
+                </div>
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="text" placeholder="Type your email" class="custom-input" [(ngModel)]="email">
+                </div>
+            </div>
+
+            <!-- Password -->
+            <p class="custom-lable text-start mt-2 mb-0 mx-0">Password</p>
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col-auto py-1 px-0">
+                    <img src="../../assets/images/password.svg" style="pointer-events: none; user-select: none; height: 32px; width: 32px;">
+                </div>
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="password" placeholder="Type your password" class="custom-input" [(ngModel)]="password">
+                </div>
+            </div>
+
+             <!-- Password -->
+            <p class="custom-lable text-start mt-3 mb-0 mx-0">Permissions</p>
+            <div class="row m-0 mt-3">
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canCreateUsers" [(ngModel)]="createPermission">
+                        <label class="form-check-label" for="canCreateUsers">Create</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canReadUsers" [(ngModel)]="readPermission">
+                        <label class="form-check-label" for="canReadUsers">Read</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canUpdateUsers" [(ngModel)]="updatePermission">
+                        <label class="form-check-label" for="canUpdateUsers">Update</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canDeleteUsers" [(ngModel)]="deletePermission">
+                        <label class="form-check-label" for="canDeleteUsers">Delete</label>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canCreateUsers" [(ngModel)]="searchPermission">
+                        <label class="form-check-label" for="canCreateUsers">Search</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canReadUsers" [(ngModel)]="startPermission">
+                        <label class="form-check-label" for="canReadUsers">Start</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canUpdateUsers" [(ngModel)]="stopPermission">
+                        <label class="form-check-label" for="canUpdateUsers">Stop</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canDeleteUsers" [(ngModel)]="dischargePermission">
+                        <label class="form-check-label" for="canDeleteUsers">Discharge</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canUpdateUsers" [(ngModel)]="addPermission">
+                        <label class="form-check-label" for="canUpdateUsers">Add</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="canDeleteUsers" [(ngModel)]="removePermission">
+                        <label class="form-check-label" for="canDeleteUsers">Remove</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Button -->
+            <div class="row mt-4">
+                <div class="col d-flex align-items-center">
+                    <button class="custom-button" (click)="createUser()">CREATE</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+<ng-template #noPermissionMessage>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <p class="custom-lable text-center">You don't have permission to access this page.</p>
+    </div>
+</ng-template>
+

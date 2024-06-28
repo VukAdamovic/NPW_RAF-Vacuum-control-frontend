@@ -1,0 +1,66 @@
+.custom-button{
+  width: 100%;
+  border-radius: 15px;
+  background: #455A64;
+  text-transform: uppercase;
+  color: #FFF;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px; 
+  font-weight: 700;
+  border: 1px solid transparent; 
+}
+
+.custom-button:hover {
+  background-color: #384952;
+}
+
+.custom-link {
+  color: rgba(0, 0, 0, 0.70);
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+  
+.custom-title {
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.custom-label {
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.custom-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+  
+.custom-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.custom-input[type="text"] {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none; 
+  outline: none; 
+}
+
+.custom-input[type="password"] {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none; 
+  outline: none; 
+}

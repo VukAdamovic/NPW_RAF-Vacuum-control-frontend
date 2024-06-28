@@ -1,0 +1,15 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+body{
+    overflow-y: hidden !important;
+    margin: 0px;
+    height: 100vh;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: #F5F5F5;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

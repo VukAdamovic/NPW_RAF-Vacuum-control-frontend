@@ -1,0 +1,36 @@
+<div class="container" *ngIf="isAllowed; else noPermissionMessage">
+    <div class="row gx-5 h-100" >
+        <div class="col d-flex flex-column align-items-center">
+            <div class="custom-window" style="pad: 0px 50px;">
+                <table class="table" >
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Operation</th>
+                        <th>Date Create</th>
+                        <th>Error</th>
+                        <th>Vacuum Id</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let element of allErrors">
+                            <tr>
+                              <td>{{ element.id }}</td>
+                              <td>{{ element.bookedOperation }}</td>
+                              <td>{{ element.dateCreate }}</td>
+                              <td>{{ element.error }}</td>
+                              <td>{{ element.vacuumId }}</td>
+                            </tr>
+                          </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<ng-template #noPermissionMessage>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <p class="custom-lable text-center">You don't have permission to access this page.</p>
+    </div>
+</ng-template>

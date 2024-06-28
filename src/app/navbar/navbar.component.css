@@ -1,0 +1,31 @@
+.active{
+    font-weight: bold;
+}
+
+.custom-bg{
+    background-color: transparent !important;
+}
+
+
+.nav-link{
+    font-size: 18px !important;
+    margin-top: 15px !important;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+    padding: 0px !important;
+}
+
+
+.custom-button{
+    width: 100%;
+    border-radius: 15px;
+    background: #FF806E;
+    color: #FFF;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid transparent; 
+  }
+  
+  .custom-button:hover {
+    background-color: #d45645;
+  }

@@ -1,0 +1,113 @@
+<div class="container" *ngIf="isAllowed; else noPermissionMessage">
+    <div class = "row gx-5 mt-5">
+        <!-- Name -->
+        <div class = "col d-flex align-items-center justify-content-center">
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col-auto py-1 px-0">
+                    <img src="../../assets/images/search-interface-symbol.png" style="pointer-events: none; user-select: none; height: 32px; width: 32px;">
+                </div>
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="text" placeholder="Search" class="custom-input" [(ngModel)]="name">
+                </div>
+            </div>
+        </div>
+
+         <!-- Date From -->
+         <div class = "col d-flex align-items-center justify-content-center">
+            <p class="custom-lable text-start mt-2 mb-0 mx-4">From</p>
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="date" class="custom-input" [(ngModel)]="dateFrom">
+                </div>
+            </div>
+        </div>
+
+         <!-- Date To -->
+         <div class = "col d-flex align-items-center justify-content-center">
+            <p class="custom-lable text-start mt-2 mb-0 mx-4">To</p>
+            <div class="row m-0" style="border-bottom: 1px solid black;">
+                <div class="col pe-0 pt-0 pb-0 d-flex align-items-center" style="padding-left: 12px;">
+                    <input type="date"  class="custom-input" [(ngModel)]="dateTo">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row gx-5 mt-0 ">
+        <!-- Status -->
+        <div class="row m-0 mt-3 d-flex align-items-center justify-content-center">
+        <p class="custom-label text-center mt-2 mb-2 mx-0">Status</p>
+          <div class="col-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="statusOn" name="status" [(ngModel)]="statusOFF" value="ON">
+              <label class="form-check-label" for="statusOn">ON</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="statusDischarging" name="status" [(ngModel)]="statusDISCHARGING" value="DISCHARGING">
+              <label class="form-check-label" for="statusDischarging">DISCHARGING</label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="statusOff" name="status" [(ngModel)]="statusOFF" value="OFF">
+              <label class="form-check-label" for="statusOff">OFF</label>
+            </div>
+          </div>
+        
+        </div>
+    </div>
+
+     <div class="row mt-3">
+        <div class="col d-flex justify-content-center align-items-center">
+            <button class="custom-button" (click)="searchByFilter()" style="width: 15%;">Filter</button>
+        </div>
+    </div>
+      
+
+    <div class="row gx-5 h-100" >
+        <div class="col d-flex flex-column align-items-center">
+            <div class="custom-window" style="pad: 0px 50px;">
+                <table class="table" >
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Status</th>
+                        <th>Added By User</th>
+                        <th>Activate</th>
+                        <th>Name</th>
+                        <th>Created</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let vacuum of allVacuums">
+                            <tr>
+                              <td>{{ vacuum.id }}</td>
+                              <td>{{ vacuum.status }}</td>
+                              <td>{{ vacuum.addedBy }}</td>
+                              <td>{{ vacuum.active }}</td>
+                              <td>{{ vacuum.name }}</td>
+                              <td>{{ vacuum.dateCreate }}</td>
+                              <td id = "dis">
+                                <button class="btn btn-danger"  (click)="removeVacuum(vacuum.id)">Remove</button>
+                                <button class="btn btn-success ms-3"  (click)="startVacuum(vacuum.id)">Start</button>
+                                <button class="btn btn-primary ms-3"  (click)="stopVacuum(vacuum.id)">Stop</button>
+                                <button class="btn btn-secondary ms-3"  (click)="dischargeVacuum(vacuum.id)">Discharge</button>
+                                <button class="btn btn-warning ms-3"  (click)="bookOperation(vacuum.id)">Book</button>
+                              </td>
+                            </tr>
+                          </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<ng-template #noPermissionMessage>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <p class="custom-lable text-center">You don't have permission to access this page.</p>
+    </div>
+</ng-template>

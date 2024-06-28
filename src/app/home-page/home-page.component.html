@@ -1,0 +1,61 @@
+<div class="container" *ngIf="isAllowed; else noPermissionMessage">
+    <div class="row gx-5 h-100" >
+        <div class="col d-flex flex-column align-items-center">
+            <div class="custom-window" style="pad: 0px 50px;">
+                <table class="table" >
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Create Permission</th>
+                        <th>Read Permission</th>
+                        <th>Update Permission</th>
+                        <th>Delete Permission</th>
+                        <th>Search Permission</th>
+                        <th>Start Permission</th>
+                        <th>Stop Permission</th>
+                        <th>Discharge Permission</th>
+                        <th>Add Permission</th>
+                        <th>Remove Permission</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let user of allUsers">
+                            <tr *ngIf="activeUserId !== user.id">
+                              <td (click)="updateUser(user.id)">{{ user.id }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.firstName }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.lastName }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.email }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.password }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canCreateUsers }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canReadUsers }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canUpdateUsers }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canDeleteUsers }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canSearchVacuum }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canStartVacuum }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canStopVacuum }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canDischargeVacuum }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canAddVacuum }}</td>
+                              <td (click)="updateUser(user.id)">{{ user.canRemoveVacuum }}</td>
+
+                              <td id = "dis">
+                                <button class="btn btn-danger"  (click)="deleteUser(user.id)">Delete</button>
+                              </td>
+                            </tr>
+                          </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<ng-template #noPermissionMessage>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <p class="custom-lable text-center">You don't have permission to access this page.</p>
+    </div>
+</ng-template>
